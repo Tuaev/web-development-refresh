@@ -1,3 +1,156 @@
 body {
-   background: purple;
+   font-family: Roboto, arial;
+   background: linear-gradient(270deg, #e33a61, #1dd6a7, #33bdd1, #d0d133);
+   background-size: 800% 800%;
+   -webkit-animation: AnimationName 40s ease infinite;
+   -moz-animation: AnimationName 40s ease infinite;
+   -o-animation: AnimationName 40s ease infinite;
+   animation: AnimationName 40s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+   0% {
+      background-position: 0% 50%
+   }
+   50% {
+      background-position: 100% 50%
+   }
+   100% {
+      background-position: 0% 50%
+   }
+}
+
+@-moz-keyframes AnimationName {
+   0% {
+      background-position: 0% 50%
+   }
+   50% {
+      background-position: 100% 50%
+   }
+   100% {
+      background-position: 0% 50%
+   }
+}
+
+@-o-keyframes AnimationName {
+   0% {
+      background-position: 0% 50%
+   }
+   50% {
+      background-position: 100% 50%
+   }
+   100% {
+      background-position: 0% 50%
+   }
+}
+
+@keyframes AnimationName {
+   0% {
+      background-position: 0% 50%
+   }
+   50% {
+      background-position: 100% 50%
+   }
+   100% {
+      background-position: 0% 50%
+   }
+}
+
+h1 {
+   background: #2980b9;
+   color: white;
+   margin: 0;
+   padding: 10px 20px;
+   text-transform: uppercase;
+   font-size: 20px;
+   font-weight: normal;
+}
+
+ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+li {
+   background: white;
+   height: 40px;
+   line-height: 40px;
+   color: #666;
+}
+
+li:hover span {
+   width: 40px;
+   opacity: 1;
+}
+
+li:nth-child(2n) {
+   background: #f7f7f7;
+}
+
+span {
+   background: #e74c3c;
+   height: 40px;
+   margin-right: 20px;
+   text-align: center;
+   color: white;
+   width: 0;
+   display: inline-block;
+   transition: 0.2s linear;
+   opacity: 0;
+}
+
+.fa-plus {
+   float: right;
+}
+
+input {
+   font-size: 18px;
+   color: #2980b9;
+   background-color: #f7f7f7;
+   width: 100%;
+   padding: 13px 13px 13px 20px;
+   box-sizing: border-box;
+   border: 3px solid rgba(0, 0, 0, 0);
+   display: none;
+}
+
+input:focus {
+   background: white;
+   border: 3px solid #2980b9;
+   outline: none;
+}
+
+#container {
+   box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+   width: 360px;
+   margin: 100px auto;
+   background: #f7f7f7;
+}
+
+.completed {
+   color: grey;
+   text-decoration: line-through;
+}
+
+@keyframes faPlus {
+
+    0%{
+
+        transform: rotate(0deg);
+    }100%{
+
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes faPlusInverse {
+
+    0%{
+
+        transform: rotate(90deg);
+    }100%{
+
+        transform: rotate(0deg);
+    }
 }
