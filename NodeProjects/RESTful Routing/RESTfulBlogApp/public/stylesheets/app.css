@@ -1,0 +1,42 @@
+h3 {
+    color: #666666;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+i.icon {
+    font-size: 2em;
+}
+
+.container.main {
+    margin-top: 6em;
+    
+}
+.heading{
+    margin-bottom: 5px;
+}
+.subHeading{
+    margin-top: 0px;
+}
+
+/* SHOW */
+.topHeading{
+    font-size: 40px;
+}
+.shortHeading{
+    font-size: 24px;
+    color: #999999;
+    line-height: 29px;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+.borderLine {
+    border-bottom: 1px solid #f1f1f1;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+}
+
+#deleteForm{
+    display: inline;
+}

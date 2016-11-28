@@ -1,0 +1,17 @@
+<% include ./partials/header %>
+
+<div class="ui main container text">
+<% blogs.reverse().forEach(function(blog){ %>
+    <div class="borderLine">
+        <img src="<%= blog.image %>">
+        <h2 class="heading"><%=blog.title%></h2>
+        <h3 class="subHeading"><%=blog.shortIntro%></h3>
+        <span><%= blog.created.toDateString() %></span>
+        <a href="/blogs/<%= blog._id %>">Read More</a>
+    
+    </div>
+
+    <% }) %>
+    </div>
+
+<% include ./partials/footer %>
