@@ -12,9 +12,17 @@ i.icon {
     margin-top: 6em;
     
 }
+.big{
+    color: inherit;
+    font-size: 27px;
+    font-weight: 900;
+    line-height: 33px;
+}
+
 .heading{
     margin-bottom: 5px;
 }
+
 .subHeading{
     margin-top: 0px;
 }
@@ -23,6 +31,7 @@ i.icon {
 .topHeading{
     font-size: 40px;
 }
+
 .shortHeading{
     font-size: 24px;
     color: #999999;

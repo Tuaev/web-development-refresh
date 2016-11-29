@@ -1,17 +1,32 @@
 <% include ./partials/header %>
 
-<div class="ui main container text">
-<% blogs.reverse().forEach(function(blog){ %>
-    <div class="borderLine">
-        <img src="<%= blog.image %>">
-        <h2 class="heading"><%=blog.title%></h2>
-        <h3 class="subHeading"><%=blog.shortIntro%></h3>
-        <span><%= blog.created.toDateString() %></span>
-        <a href="/blogs/<%= blog._id %>">Read More</a>
-    
+    <div class="ui main container">
+        <div class="ui huge header">RESTful Blog App</div>
+        <div class="ui top attached segment">
+            <div class="ui divided items">
+                <% blogs.reverse().forEach(function(blog){ %>
+                    <div class="item">
+                        <div class="ui image">
+                            <a href="/blogs/<%= blog._id %>"> <img class="ui medium image" src="<%= blog.image %>"></a>
+                        </div>
+                        <div class="content">
+                            <a class="big" href="/blogs/<%= blog._id %>"><%=blog.title%></a>
+                            <div class="meta">
+                                <span><%= blog.created.toDateString() %></span>
+                            </div>
+                            <div class="description">
+                                <h3 class="subHeading"><%=blog.shortIntro%></h3>
+                            </div>
+                            <div class="extra">
+                                <a class="ui floated basic blue button" href="/blogs/<%= blog._id %>">
+                                    Read More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
     </div>
 
-    <% }) %>
-    </div>
-
-<% include ./partials/footer %>
+    <% include ./partials/footer %>

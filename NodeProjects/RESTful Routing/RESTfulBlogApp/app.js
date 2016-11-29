@@ -63,6 +63,10 @@ app.post("/blogs", function(req, res) {
     // create blog   
     req.body.blog.title = req.sanitize(req.body.blog.title);
 
+    if (req.body.blog.image === "") {
+        req.body.blog.image = "http://www.completecarewellnesscenter.com/wp-content/uploads/2016/09/blog_default.png"
+    }
+
     Blog.create(req.body.blog, function(error, newBlog) {
         if (error) {
             res.render("new");
@@ -86,20 +90,22 @@ app.get("/blogs/:id", function(req, res) {
 });
 
 // EDIT ROUTE
-app.get("/blogs/:id/edit", function(req, res){
-    Blog.findById(req.params.id, function(error, foundBlog){
+app.get("/blogs/:id/edit", function(req, res) {
+    Blog.findById(req.params.id, function(error, foundBlog) {
         if (error) {
             res.redirect("/blogs");
         } else {
-            res.render("edit", {blog: foundBlog});
+            res.render("edit", {
+                blog: foundBlog
+            });
         }
     })
 })
 
 // UPDATE ROUTE
-app.put("/blogs/:id", function(req, res){
+app.put("/blogs/:id", function(req, res) {
     req.body.blog.title = req.sanitize(req.body.blog.title);
-    Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(error, updatedBlog){
+    Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(error, updatedBlog) {
         if (error) {
             res.redirect("/blogs");
         } else {
@@ -109,10 +115,10 @@ app.put("/blogs/:id", function(req, res){
 })
 
 // DELETE ROUTE
-app.delete("/blogs/:id", function(req, res){
+app.delete("/blogs/:id", function(req, res) {
     // destroy blog
-    Blog.findByIdAndRemove(req.params.id, function(error){
-        if(error){
+    Blog.findByIdAndRemove(req.params.id, function(error) {
+        if (error) {
             console.log(error);
             res.redirect("/blogs")
         } else {
